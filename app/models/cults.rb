@@ -26,7 +26,7 @@ class Cult
   def cult_population
       self.find_followers.count 
   end 
-
+  #find_followers method is a way of getting an array of all the followers to use in other methods
   def find_followers
      bloodoath_cults = BloodOath.all.select do |bloodoath_instance|
         bloodoath_instance.cult == self 
@@ -54,6 +54,40 @@ class Cult
           cult_instance.founding_year == founding_year
       end 
   end
+
+  def average_age
+        face_of_boe  = self.find_followers.sum do |followers_instance| #face_of_boe = sum of names
+            followers_instance.age 
+        end 
+        face_of_boe.to_f / self.cult_population 
+    end
+
+   def my_followers_mottos
+        self.find_followers.map do |weeping_angel| #weeping_angel is follower instance
+            weeping_angel.life_motto 
+        end
+    end
+
+    def self.least_popular 
+        smallest_cult_pop = 99999999999
+        smallest_cult = ""
+        self.all.each do |cult_instance|
+            if cult_instance.cult_population < smallest_cult_pop 
+                smallest_cult = cult_instance
+                smallest_cult_pop = cult_instance.cult_population  
+            end
+        end
+        smallest_cult 
+    end
+
+    def self.most_common_location
+        locations = self.all.map do |cult_instance|
+            cult_instance.location
+        end
+        locations.max_by {|location| locations.count(location)}
+    end 
+
+
 
 end #Class
 #binding.pry

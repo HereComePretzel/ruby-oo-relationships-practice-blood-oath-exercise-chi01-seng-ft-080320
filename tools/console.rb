@@ -9,8 +9,8 @@ end
 
 #def initialize(name, location, founding_year, slogan)
 a = Cult.new("Headbangers", "Toledo", "1866", "BANG YER HEAD!")
-b = Cult.new("The Warriors", "NYC", "1979", "Hey Warrrrriorrrrrsss!")
-c = Cult.new("Heavens Gate", "Wyoming", "1995", "Don't drink the koolaid")
+b = Cult.new("The Warriors", "Chicago", "1979", "Hey Warrrrriorrrrrsss!")
+c = Cult.new("Heavens Gate", "Chicago", "1995", "Don't drink the koolaid")
 
 #initialize(name, age, life_motto)
 person1 = Follower.new("Rose_Tyler", 24, "Bad Wolf")
@@ -19,6 +19,7 @@ person3 = Follower.new("Jack_Harkness", 100000, "Hi, I'm Capt Jack")
 
 oath1 = BloodOath.new(a, person1)
 oath2 = BloodOath.new(b, person2)
+oath3 = BloodOath.new(a, person3)
 # Insert code here to run before hitting the binding.pry
 # This is a convenient place to define variables and/or set up new object instances,
 # so they will be available to test and play around with in your console
