@@ -20,17 +20,22 @@ class Cult
 
   def recruit_follower(follower)
       BloodOath.new(self, follower)
-      blood_oath_cults = BloodOath.all.select do |bloodoath_instance|
-        bloodoath_instance.cult == self 
-      end
-      blood_oath_cults.map do |cult|
-        cult.follower 
-      end
+      self.find_followers
   end 
 
   def cult_population
-      @followers.count 
+      self.find_followers.count 
   end 
+
+  def find_followers
+     bloodoath_cults = BloodOath.all.select do |bloodoath_instance|
+        bloodoath_instance.cult == self 
+    end
+        bloodoath_cults.map do |cult|
+          cult.follower 
+      end
+  end 
+    
 
   def self.find_by_name(name)
       self.all.find do |cult_instance|

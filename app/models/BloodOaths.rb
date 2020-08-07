@@ -14,6 +14,10 @@ class BloodOath
         @@all 
     end
 
+    def initiation_date
+        @initiation_date.to_s[0, 10]
+    end 
+
     #binding.pry 
     'oh jeez'
 
