@@ -19,7 +19,13 @@ class Cult
   end 
 
   def recruit_follower(follower)
-      @followers << follower
+      BloodOath.new(self, follower)
+      blood_oath_cults = BloodOath.all.select do |bloodoath_instance|
+        bloodoath_instance.cult == self 
+      end
+      blood_oath_cults.map do |cult|
+        cult.follower 
+      end
   end 
 
   def cult_population

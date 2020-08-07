@@ -11,6 +11,11 @@ end
 a = Cult.new("Headbangers", "Toledo", "1866", "BANG YER HEAD!")
 b = Cult.new("The Warriors", "NYC", "1979", "Hey Warrrrriorrrrrsss!")
 c = Cult.new("Heavens Gate", "Wyoming", "1995", "Don't drink the koolaid")
+
+#initialize(name, age, life_motto)
+person1 = Follower.new("Rose_Tyler", 24, "Bad Wolf")
+person2 = Follower.new("Jamie_McKinnon", 30, "Whatever")
+person3 = Follower.new("Jack_Harkness", 100000, "Hi, I'm Capt Jack")
 # Insert code here to run before hitting the binding.pry
 # This is a convenient place to define variables and/or set up new object instances,
 # so they will be available to test and play around with in your console
