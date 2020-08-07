@@ -18,6 +18,10 @@ class BloodOath
         @initiation_date.to_s[0, 10]
     end 
 
+    def self.first_oath 
+        self.all[0].follower
+    end 
+
     #binding.pry 
     'oh jeez'
 

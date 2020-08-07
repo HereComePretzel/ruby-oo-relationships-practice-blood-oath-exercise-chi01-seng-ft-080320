@@ -4,6 +4,7 @@ class Cult
     attr_accessor  :followers
     #initialize with name, location, founding year, slogan, follower array
   @@all = []
+  
   def initialize(name, location, founding_year, slogan)
       @name = name
       @location = location
@@ -80,12 +81,12 @@ class Cult
         smallest_cult 
     end
 
-    def self.most_common_location
-        locations = self.all.map do |cult_instance|
-            cult_instance.location
-        end
-        locations.max_by {|location| locations.count(location)}
-    end 
+    # def self.most_common_location
+    #     locations = self.all.map do |cult_instance|
+    #         cult_instance.location
+    #     end
+    #     locations.max_by {|location| locations.count(location)}
+    # end 
 
 
 
